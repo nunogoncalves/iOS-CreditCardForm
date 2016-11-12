@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,97 +23,129 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hq0-Lm-8Wt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="190"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXY-Vx-zgJ">
-                                        <rect key="frame" x="67.5" y="20" width="240" height="150"/>
+                                        <rect key="frame" x="20" y="20" width="336" height="210"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opk-tt-jAh" userLabel="BackContainer">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcardBack" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-aZ-Wp7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
                                                         <color key="tintColor" red="0.1843137255" green="0.7725490196" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="azP-G1-J36">
-                                                        <rect key="frame" x="154" y="99" width="51" height="23"/>
+                                                        <rect key="frame" x="248" y="75" width="75" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="75" id="4Aq-ND-pnE"/>
+                                                            <constraint firstAttribute="height" constant="35" id="oOY-WY-Blw"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="azP-G1-J36" firstAttribute="leading" secondItem="Opk-tt-jAh" secondAttribute="leading" constant="154" id="0vp-5i-ciX"/>
                                                     <constraint firstItem="qQ8-aZ-Wp7" firstAttribute="top" secondItem="Opk-tt-jAh" secondAttribute="top" id="MDr-cg-k1g"/>
-                                                    <constraint firstItem="azP-G1-J36" firstAttribute="top" secondItem="Opk-tt-jAh" secondAttribute="top" constant="99" id="VR4-qR-8R3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="azP-G1-J36" secondAttribute="bottom" constant="28" id="aJa-bF-rR6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="azP-G1-J36" secondAttribute="trailing" constant="35" id="p44-69-cmf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="azP-G1-J36" secondAttribute="bottom" constant="100" id="aJa-bF-rR6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="azP-G1-J36" secondAttribute="trailing" constant="13" id="p44-69-cmf"/>
                                                     <constraint firstAttribute="trailing" secondItem="qQ8-aZ-Wp7" secondAttribute="trailing" id="s85-X6-ozp"/>
                                                     <constraint firstItem="qQ8-aZ-Wp7" firstAttribute="leading" secondItem="Opk-tt-jAh" secondAttribute="leading" id="tJn-pg-SE7"/>
                                                     <constraint firstAttribute="bottom" secondItem="qQ8-aZ-Wp7" secondAttribute="bottom" id="y7t-0c-deq"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CS-CQ-sUr" userLabel="FrontContainer">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcardFront" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-U2-N3I">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCard" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-U2-N3I">
+                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
                                                     </imageView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="xxxxxxxxxxxxxxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
-                                                        <rect key="frame" x="22" y="79" width="205" height="19"/>
-                                                        <color key="backgroundColor" red="0.18431372549019609" green="0.36078431372549019" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="creditcardFront" translatesAutoresizingMaskIntoConstraints="NO" id="n18-Jr-7TG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="puL-ae-KYu">
+                                                        <rect key="frame" x="300" y="12" width="0.0" height="0.0"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="xxxxxxxxxxxxxxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
+                                                        <rect key="frame" x="10" y="110" width="313" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="OeX-IL-aSC"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hem-10-R2b">
-                                                        <rect key="frame" x="102" y="106" width="48" height="12"/>
-                                                        <color key="backgroundColor" red="0.1843137255" green="0.36078431370000003" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <rect key="frame" x="145" y="150" width="80" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="EYu-Jy-3zJ"/>
+                                                            <constraint firstAttribute="width" constant="80" id="Yj6-MS-0lp"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRz-8y-aJZ">
-                                                        <rect key="frame" x="22" y="120" width="205" height="22"/>
-                                                        <color key="backgroundColor" red="0.1843137255" green="0.36078431370000003" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <rect key="frame" x="10" y="172" width="255" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="lUY-t0-dXE"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kbf-qb-GEH">
+                                                        <rect key="frame" x="273" y="168" width="53" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="ThY-mD-LbL"/>
+                                                            <constraint firstAttribute="width" constant="53" id="Z6z-mm-s6L"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="Hem-10-R2b" firstAttribute="leading" secondItem="1CS-CQ-sUr" secondAttribute="leading" constant="102" id="2OY-qo-MtR"/>
-                                                    <constraint firstItem="KRz-8y-aJZ" firstAttribute="trailing" secondItem="JPH-Cq-cIp" secondAttribute="trailing" id="2sh-2w-cye"/>
-                                                    <constraint firstItem="Hem-10-R2b" firstAttribute="top" secondItem="1CS-CQ-sUr" secondAttribute="top" constant="106" id="5pW-vc-PE3"/>
-                                                    <constraint firstItem="JPH-Cq-cIp" firstAttribute="leading" secondItem="1CS-CQ-sUr" secondAttribute="leading" constant="22" id="7Gs-5g-eOl"/>
-                                                    <constraint firstItem="JPH-Cq-cIp" firstAttribute="top" secondItem="1CS-CQ-sUr" secondAttribute="top" constant="79" id="CQ6-AI-EUg"/>
-                                                    <constraint firstAttribute="bottom" secondItem="JPH-Cq-cIp" secondAttribute="bottom" constant="52" id="Def-yf-S9e"/>
-                                                    <constraint firstItem="KRz-8y-aJZ" firstAttribute="top" secondItem="JPH-Cq-cIp" secondAttribute="bottom" constant="22" id="HCY-6Q-LL9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Hem-10-R2b" secondAttribute="bottom" constant="32" id="LGn-Hk-zO7"/>
+                                                    <constraint firstItem="Hem-10-R2b" firstAttribute="leading" secondItem="1CS-CQ-sUr" secondAttribute="leading" constant="145" id="2OY-qo-MtR"/>
+                                                    <constraint firstItem="JPH-Cq-cIp" firstAttribute="leading" secondItem="1CS-CQ-sUr" secondAttribute="leading" constant="10" id="7Gs-5g-eOl"/>
+                                                    <constraint firstItem="kbf-qb-GEH" firstAttribute="trailing" secondItem="YUv-U2-N3I" secondAttribute="trailing" constant="-10" id="Acy-7J-O3E"/>
+                                                    <constraint firstItem="JPH-Cq-cIp" firstAttribute="top" secondItem="1CS-CQ-sUr" secondAttribute="top" constant="110" id="CQ6-AI-EUg"/>
+                                                    <constraint firstItem="puL-ae-KYu" firstAttribute="top" secondItem="1CS-CQ-sUr" secondAttribute="top" constant="12" id="LUW-5U-HdZ"/>
+                                                    <constraint firstItem="kbf-qb-GEH" firstAttribute="leading" secondItem="KRz-8y-aJZ" secondAttribute="trailing" constant="8" id="Qn9-tQ-fbc"/>
+                                                    <constraint firstItem="Hem-10-R2b" firstAttribute="top" secondItem="JPH-Cq-cIp" secondAttribute="bottom" constant="20" id="YCi-OX-Lw5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="puL-ae-KYu" secondAttribute="trailing" constant="36" id="bQ9-l4-aXO"/>
                                                     <constraint firstAttribute="trailing" secondItem="JPH-Cq-cIp" secondAttribute="trailing" constant="13" id="jq4-cN-lse"/>
                                                     <constraint firstItem="YUv-U2-N3I" firstAttribute="leading" secondItem="1CS-CQ-sUr" secondAttribute="leading" id="khY-ft-xd1"/>
                                                     <constraint firstAttribute="bottom" secondItem="YUv-U2-N3I" secondAttribute="bottom" id="oak-um-pKk"/>
                                                     <constraint firstAttribute="trailing" secondItem="YUv-U2-N3I" secondAttribute="trailing" id="tSl-xd-vxy"/>
                                                     <constraint firstItem="YUv-U2-N3I" firstAttribute="top" secondItem="1CS-CQ-sUr" secondAttribute="top" id="ue6-ug-5Kc"/>
                                                     <constraint firstItem="KRz-8y-aJZ" firstAttribute="leading" secondItem="JPH-Cq-cIp" secondAttribute="leading" id="wm5-Hw-96s"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Hem-10-R2b" secondAttribute="trailing" constant="90" id="wvt-Xc-ChH"/>
                                                     <constraint firstAttribute="bottom" secondItem="KRz-8y-aJZ" secondAttribute="bottom" constant="8" id="y7G-j4-VVb"/>
+                                                    <constraint firstItem="kbf-qb-GEH" firstAttribute="bottom" secondItem="YUv-U2-N3I" secondAttribute="bottom" constant="-10" id="ytE-bB-ur8"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Opk-tt-jAh" firstAttribute="top" secondItem="WXY-Vx-zgJ" secondAttribute="top" id="33F-yS-eIP"/>
+                                            <constraint firstAttribute="width" constant="336" id="Dc4-LZ-bwp"/>
+                                            <constraint firstAttribute="height" constant="210" id="Fc3-n0-8lz"/>
                                             <constraint firstAttribute="bottom" secondItem="Opk-tt-jAh" secondAttribute="bottom" id="Gvj-0D-DIM"/>
                                             <constraint firstAttribute="trailing" secondItem="Opk-tt-jAh" secondAttribute="trailing" id="Nci-qX-gjC"/>
                                             <constraint firstItem="1CS-CQ-sUr" firstAttribute="leading" secondItem="WXY-Vx-zgJ" secondAttribute="leading" id="Obc-st-lz1"/>
                                             <constraint firstItem="Opk-tt-jAh" firstAttribute="leading" secondItem="WXY-Vx-zgJ" secondAttribute="leading" id="Ui8-Sd-DWI"/>
+                                            <constraint firstAttribute="width" secondItem="WXY-Vx-zgJ" secondAttribute="height" multiplier="8:5" id="ZaE-d4-c5V"/>
                                             <constraint firstAttribute="trailing" secondItem="1CS-CQ-sUr" secondAttribute="trailing" id="cdH-RI-6Ga"/>
                                             <constraint firstItem="1CS-CQ-sUr" firstAttribute="top" secondItem="WXY-Vx-zgJ" secondAttribute="top" id="dre-qc-xPN"/>
-                                            <constraint firstAttribute="width" constant="240" id="ojG-zy-RWM"/>
                                             <constraint firstAttribute="bottom" secondItem="1CS-CQ-sUr" secondAttribute="bottom" id="qSd-7f-uQF"/>
-                                            <constraint firstAttribute="height" constant="150" id="vSP-em-WrF"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -124,7 +157,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tE-IP-dv9" customClass="CreditCardForm" customModule="CreditCard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="220" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Lw6-Kp-dcX"/>
                                 </constraints>
@@ -147,6 +180,9 @@
                         <outlet property="cardExpiryDateTextView" destination="Hem-10-R2b" id="Vz6-M4-1jg"/>
                         <outlet property="cardNameTextView" destination="KRz-8y-aJZ" id="aly-zT-SIc"/>
                         <outlet property="cardNumberTextView" destination="JPH-Cq-cIp" id="sCQ-v1-oaH"/>
+                        <outlet property="cardOverlayView" destination="n18-Jr-7TG" id="McN-9E-YG8"/>
+                        <outlet property="cardTypeImageView" destination="kbf-qb-GEH" id="xTQ-qu-IgI"/>
+                        <outlet property="cardTypeLabel" destination="puL-ae-KYu" id="V3h-hq-Hig"/>
                         <outlet property="creaditCardForm" destination="8tE-IP-dv9" id="BLg-5i-o4P"/>
                         <outlet property="cvvTextView" destination="azP-G1-J36" id="Rkw-1h-w6i"/>
                         <outlet property="front" destination="YUv-U2-N3I" id="zzv-dg-2ZF"/>
@@ -159,7 +195,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="creditcardBack" width="490" height="339"/>
-        <image name="creditcardFront" width="354" height="223"/>
+        <image name="creditcardBack" width="250" height="160"/>
+        <image name="creditcardFront" width="250" height="156"/>
+        <image name="emptyCard" width="474" height="297"/>
     </resources>
 </document>
