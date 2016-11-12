@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum FormFieldType: String {
+enum FormItemType: String {
     
     case name = "Card Name"
     case number = "Card Number"

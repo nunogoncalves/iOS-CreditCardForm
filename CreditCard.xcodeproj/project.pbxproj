@@ -12,7 +12,7 @@
 		854C193B1DD76F9E00F07CC8 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19381DD76F9E00F07CC8 /* UIStackView.swift */; };
 		85F0C6431DD686AC00A52830 /* CreditCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6421DD686AC00A52830 /* CreditCardForm.swift */; };
 		85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6461DD696AE00A52830 /* FormItemView.swift */; };
-		85F0C6491DD696F100A52830 /* FormFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6481DD696F100A52830 /* FormFieldType.swift */; };
+		85F0C6491DD696F100A52830 /* FormItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6481DD696F100A52830 /* FormItemType.swift */; };
 		85F481081DD5337A00261C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F481071DD5337A00261C13 /* AppDelegate.swift */; };
 		85F4810A1DD5337A00261C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F481091DD5337A00261C13 /* ViewController.swift */; };
 		85F4810D1DD5337A00261C13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F4810B1DD5337A00261C13 /* Main.storyboard */; };
@@ -26,7 +26,7 @@
 		854C19381DD76F9E00F07CC8 /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = Extensions/UIStackView.swift; sourceTree = "<group>"; };
 		85F0C6421DD686AC00A52830 /* CreditCardForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardForm.swift; sourceTree = "<group>"; };
 		85F0C6461DD696AE00A52830 /* FormItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemView.swift; sourceTree = "<group>"; };
-		85F0C6481DD696F100A52830 /* FormFieldType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormFieldType.swift; sourceTree = "<group>"; };
+		85F0C6481DD696F100A52830 /* FormItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemType.swift; sourceTree = "<group>"; };
 		85F481041DD5337A00261C13 /* CreditCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F481071DD5337A00261C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F481091DD5337A00261C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				85F0C6381DD6611500A52830 /* Extensions */,
 				85F481091DD5337A00261C13 /* ViewController.swift */,
 				85F0C6461DD696AE00A52830 /* FormItemView.swift */,
-				85F0C6481DD696F100A52830 /* FormFieldType.swift */,
+				85F0C6481DD696F100A52830 /* FormItemType.swift */,
 				85F0C6421DD686AC00A52830 /* CreditCardForm.swift */,
 			);
 			path = CreditCard;
@@ -175,7 +175,7 @@
 				854C193A1DD76F9E00F07CC8 /* UIColor.swift in Sources */,
 				85F0C6431DD686AC00A52830 /* CreditCardForm.swift in Sources */,
 				854C193B1DD76F9E00F07CC8 /* UIStackView.swift in Sources */,
-				85F0C6491DD696F100A52830 /* FormFieldType.swift in Sources */,
+				85F0C6491DD696F100A52830 /* FormItemType.swift in Sources */,
 				85F4810A1DD5337A00261C13 /* ViewController.swift in Sources */,
 				85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */,
 				85F481081DD5337A00261C13 /* AppDelegate.swift in Sources */,

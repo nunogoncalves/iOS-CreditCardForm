@@ -125,7 +125,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tE-IP-dv9" customClass="CreditCardForm" customModule="CreditCard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="220" width="375" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Lw6-Kp-dcX"/>
                                 </constraints>

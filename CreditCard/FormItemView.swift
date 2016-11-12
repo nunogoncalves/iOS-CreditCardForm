@@ -16,7 +16,7 @@ extension UIControlEvents {
 
 class FormItemView : UIControl {
     
-    let type: FormFieldType
+    let type: FormItemType
     
     lazy var button: UIButton = {
         let button = UIButton()
@@ -57,7 +57,7 @@ class FormItemView : UIControl {
         }
     }
     
-    init(type: FormFieldType) {
+    init(type: FormItemType) {
         self.type = type
         super.init(frame: .zero)
         configure()

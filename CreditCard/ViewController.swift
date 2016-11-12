@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBOutlet fileprivate weak var creaditCardForm: CreditCardForm!
     
-    fileprivate var selectedType = FormFieldType.number
+    fileprivate var selectedType = FormItemType.number
     
     @IBOutlet fileprivate weak var cardNumberTextView: UITextView! {
         didSet {
@@ -110,7 +110,7 @@ extension ViewController : CreditCardFormDelegate {
         cvvTextView.text = cardSecurityCode
     }
     
-    func selected(_ type: FormFieldType) {
+    func selected(_ type: FormItemType) {
         guard selectedType != type else { return }
         
         if type == .securityCode {

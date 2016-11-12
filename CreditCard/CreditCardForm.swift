@@ -13,7 +13,7 @@ protocol CreditCardFormDelegate : class {
     func updated(cardName: String)
     func updated(cardSecurityCode: String)
     func updated(cardExpiryDate: String)
-    func selected(_ type: FormFieldType)
+    func selected(_ type: FormItemType)
 }
 
 class CreditCardForm : UIControl {
