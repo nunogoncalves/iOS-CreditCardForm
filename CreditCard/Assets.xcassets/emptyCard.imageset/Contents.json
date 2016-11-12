@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "emptyCard.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "creditCardBack.png",
       "scale" : "2x"
     },
     {
