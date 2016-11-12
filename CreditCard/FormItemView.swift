@@ -9,10 +9,6 @@
 import UIKit
 
 extension UIControlEvents {
-    static var formItemTap: UIControlEvents {
-        return UIControlEvents(rawValue: 0x01000000)
-    }
-    
     static var becameFirstResponder: UIControlEvents {
         return UIControlEvents(rawValue: 0x02000000)
     }

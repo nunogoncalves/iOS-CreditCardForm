@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate weak var front: UIImageView!
     @IBOutlet fileprivate weak var back: UIImageView!
     
-    fileprivate lazy var scrollableForm = ScrollableCreditCardForm(frame: .zero)
+    @IBOutlet fileprivate weak var creaditCardForm: CreditCardForm!
     
     fileprivate var selectedType = FormFieldType.number
     
@@ -69,14 +69,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollableForm.delegate = self
-        view.addSubview(scrollableForm)
-        
-        scrollableForm.topAnchor.constraint(equalTo: cardContainer.bottomAnchor, constant: 20).isActive = true
-        scrollableForm.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollableForm.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        scrollableForm.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        scrollableForm.translatesAutoresizingMaskIntoConstraints = false
+        creaditCardForm.delegate = self
     }
     
     fileprivate func flip(using direction: UIViewAnimationOptions) {

@@ -123,12 +123,22 @@
                                     <constraint firstAttribute="bottom" secondItem="WXY-Vx-zgJ" secondAttribute="bottom" constant="20" id="U60-wt-gku"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tE-IP-dv9" customClass="CreditCardForm" customModule="CreditCard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="220" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Lw6-Kp-dcX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8tE-IP-dv9" secondAttribute="trailing" id="2P2-JF-JD4"/>
                             <constraint firstItem="Hq0-Lm-8Wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7R0-E3-9ZB"/>
                             <constraint firstItem="Hq0-Lm-8Wt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZBR-wr-eEe"/>
+                            <constraint firstItem="8tE-IP-dv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aeL-Fa-ULU"/>
                             <constraint firstAttribute="trailing" secondItem="Hq0-Lm-8Wt" secondAttribute="trailing" id="vuU-0H-fSz"/>
+                            <constraint firstItem="8tE-IP-dv9" firstAttribute="top" secondItem="Hq0-Lm-8Wt" secondAttribute="bottom" constant="10" id="yFH-2m-Cep"/>
                         </constraints>
                     </view>
                     <connections>
@@ -138,6 +148,7 @@
                         <outlet property="cardExpiryDateTextView" destination="Hem-10-R2b" id="Vz6-M4-1jg"/>
                         <outlet property="cardNameTextView" destination="KRz-8y-aJZ" id="aly-zT-SIc"/>
                         <outlet property="cardNumberTextView" destination="JPH-Cq-cIp" id="sCQ-v1-oaH"/>
+                        <outlet property="creaditCardForm" destination="8tE-IP-dv9" id="BLg-5i-o4P"/>
                         <outlet property="cvvTextView" destination="azP-G1-J36" id="Rkw-1h-w6i"/>
                         <outlet property="front" destination="YUv-U2-N3I" id="zzv-dg-2ZF"/>
                         <outlet property="frontContainer" destination="1CS-CQ-sUr" id="foM-sO-hsy"/>

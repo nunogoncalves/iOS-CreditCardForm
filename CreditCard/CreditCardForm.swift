@@ -43,7 +43,7 @@ class CreditCardForm : UIControl {
         }
     }
     
-    weak var delegate: CreditCardFormDelegate?
+    @IBInspectable weak var delegate: CreditCardFormDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
