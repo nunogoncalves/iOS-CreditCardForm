@@ -10,6 +10,7 @@
 		854C19391DD76F9E00F07CC8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19361DD76F9E00F07CC8 /* DateFormatter.swift */; };
 		854C193A1DD76F9E00F07CC8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19371DD76F9E00F07CC8 /* UIColor.swift */; };
 		854C193B1DD76F9E00F07CC8 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19381DD76F9E00F07CC8 /* UIStackView.swift */; };
+		854C193D1DD775BC00F07CC8 /* CreditCartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C193C1DD775BC00F07CC8 /* CreditCartType.swift */; };
 		85F0C6431DD686AC00A52830 /* CreditCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6421DD686AC00A52830 /* CreditCardForm.swift */; };
 		85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6461DD696AE00A52830 /* FormItemView.swift */; };
 		85F0C6491DD696F100A52830 /* FormItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6481DD696F100A52830 /* FormItemType.swift */; };
@@ -24,6 +25,7 @@
 		854C19361DD76F9E00F07CC8 /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatter.swift; path = Extensions/DateFormatter.swift; sourceTree = "<group>"; };
 		854C19371DD76F9E00F07CC8 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extensions/UIColor.swift; sourceTree = "<group>"; };
 		854C19381DD76F9E00F07CC8 /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = Extensions/UIStackView.swift; sourceTree = "<group>"; };
+		854C193C1DD775BC00F07CC8 /* CreditCartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCartType.swift; sourceTree = "<group>"; };
 		85F0C6421DD686AC00A52830 /* CreditCardForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardForm.swift; sourceTree = "<group>"; };
 		85F0C6461DD696AE00A52830 /* FormItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemView.swift; sourceTree = "<group>"; };
 		85F0C6481DD696F100A52830 /* FormItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemType.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				85F0C6461DD696AE00A52830 /* FormItemView.swift */,
 				85F0C6481DD696F100A52830 /* FormItemType.swift */,
 				85F0C6421DD686AC00A52830 /* CreditCardForm.swift */,
+				854C193C1DD775BC00F07CC8 /* CreditCartType.swift */,
 			);
 			path = CreditCard;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				85F4810A1DD5337A00261C13 /* ViewController.swift in Sources */,
 				85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */,
 				85F481081DD5337A00261C13 /* AppDelegate.swift in Sources */,
+				854C193D1DD775BC00F07CC8 /* CreditCartType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
