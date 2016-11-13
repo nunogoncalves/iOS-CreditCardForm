@@ -77,13 +77,13 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="xxxxxxxxxxxxxxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="xxxx xxxx xxxx xxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
                                                         <rect key="frame" x="10" y="110" width="313" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="OeX-IL-aSC"/>
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="21"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hem-10-R2b">
@@ -134,6 +134,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Opk-tt-jAh" firstAttribute="top" secondItem="WXY-Vx-zgJ" secondAttribute="top" id="33F-yS-eIP"/>
                                             <constraint firstAttribute="width" constant="336" id="Dc4-LZ-bwp"/>
@@ -158,6 +159,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tE-IP-dv9" customClass="CreditCardForm" customModule="CreditCard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="280" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Lw6-Kp-dcX"/>
                                 </constraints>
@@ -184,9 +186,9 @@
                         <outlet property="cardTypeImageView" destination="kbf-qb-GEH" id="xTQ-qu-IgI"/>
                         <outlet property="cardTypeLabel" destination="puL-ae-KYu" id="V3h-hq-Hig"/>
                         <outlet property="creaditCardForm" destination="8tE-IP-dv9" id="BLg-5i-o4P"/>
-                        <outlet property="cvvTextView" destination="azP-G1-J36" id="Rkw-1h-w6i"/>
                         <outlet property="front" destination="YUv-U2-N3I" id="zzv-dg-2ZF"/>
                         <outlet property="frontContainer" destination="1CS-CQ-sUr" id="foM-sO-hsy"/>
+                        <outlet property="securityCodeTextView" destination="azP-G1-J36" id="pfZ-zB-gTf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -197,6 +199,6 @@
     <resources>
         <image name="creditcardBack" width="250" height="160"/>
         <image name="creditcardFront" width="250" height="156"/>
-        <image name="emptyCard" width="474" height="297"/>
+        <image name="emptyCard" width="250" height="156"/>
     </resources>
 </document>

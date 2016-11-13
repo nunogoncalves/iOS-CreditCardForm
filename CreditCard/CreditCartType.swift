@@ -46,6 +46,14 @@ enum CreditCardType : String {
         }
     }
     
+    var backgroundImage: UIImage {
+        switch self {
+        case .visa, .visaElectron: return #imageLiteral(resourceName: "creditcardfrontblue")
+        case .mastercard, .maestro, .americanExpress: return #imageLiteral(resourceName: "creditcardfrontgreen")
+        case .dinnersClub, .discovery, .jcb: return #imageLiteral(resourceName: "creditcardfrontpurple")
+        }
+    }
+    
     var image: UIImage {
         switch self {
         case .visa: return #imageLiteral(resourceName: "visa")
