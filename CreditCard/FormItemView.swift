@@ -90,7 +90,6 @@ class FormItemView : UIControl {
         bottomLine.leadingAnchor.constraint(equalTo: textField.leadingAnchor).isActive = true
         bottomLine.trailingAnchor.constraint(equalTo: textField.trailingAnchor).isActive = true
         bottomLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        bottomLine.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     @objc private func buttonTap() {
