@@ -24,9 +24,6 @@ class ViewController: UIViewController {
     
     @IBOutlet fileprivate weak var creaditCardForm: CreditCardForm!
     
-    fileprivate var selectedFormItemType = FormItemType.number
-    fileprivate var selectedCardType: CreditCardType?
-    
     @IBOutlet fileprivate weak var cardNumberTextView: UITextView! {
         didSet {
             cardNumberTextView.textContainerInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
@@ -55,7 +52,10 @@ class ViewController: UIViewController {
         }
     }
     
-    var isFrontVisible = true
+    fileprivate var selectedFormItemType = FormItemType.number
+    fileprivate var selectedCardType: CreditCardType?
+    
+    fileprivate var isFrontVisible = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,55 +63,71 @@ class ViewController: UIViewController {
         creaditCardForm.delegate = self
     }
     
+    private let cardMaskLayer = CAShapeLayer()
+    private let cardTypeChangeAnimationDuration: TimeInterval = 0.2
+    
     func animateCardChange(addingCard: Bool) {
+        
         if addingCard {
             cardOverlayView.isHidden = false
         }
-        let smallPath = UIBezierPath(arcCenter: CGPoint(x: -50, y: -50),
-                                     radius: 50,
-                                     startAngle: 0,
-                                     endAngle: 2 * .pi,
-                                     clockwise: true)
         
-        let center = CGPoint(x: frontContainer.frame.width / 2, y: frontContainer.frame.height / 2)
-        let radiusWidth = frontContainer.frame.width / 2
-        let radiusHeight = frontContainer.frame.height / 2
-        let radius = sqrt((radiusWidth * radiusWidth) + (radiusHeight * radiusHeight))
-        let bigPath = UIBezierPath(arcCenter: center,
-                                   radius: radius,
-                                   startAngle: 0,
-                                   endAngle: 2 * .pi,
-                                   clockwise: true)
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = bigPath.cgPath
-        maskLayer.fillColor = UIColor.blue.cgColor
-        maskLayer.lineWidth = 10
-        maskLayer.strokeColor = UIColor.blue.cgColor
-        cardOverlayView.layer.mask = maskLayer
+        cardMaskLayer.path = bigCirclePath
+        cardMaskLayer.fillColor = UIColor.black.cgColor
+        cardOverlayView.layer.mask = cardMaskLayer
         
         CATransaction.begin()
         
         let pathAnimation = CABasicAnimation(keyPath: "path")
         if addingCard {
-            pathAnimation.fromValue = smallPath.cgPath
-            pathAnimation.toValue = bigPath.cgPath
+            pathAnimation.fromValue = smallCirclePath
+            pathAnimation.toValue = bigCirclePath
         } else {
-            pathAnimation.fromValue = bigPath.cgPath
-            pathAnimation.toValue = smallPath.cgPath
+            pathAnimation.fromValue = bigCirclePath
+            pathAnimation.toValue = smallCirclePath
         }
         
-        pathAnimation.duration = 0.2
+        pathAnimation.duration = cardTypeChangeAnimationDuration
         
         CATransaction.setCompletionBlock {
             if !addingCard {
                 self.cardOverlayView.isHidden = true
             }
             self.cardOverlayView.layer.mask = nil
-            maskLayer.removeAllAnimations()
+            self.cardMaskLayer.removeAllAnimations()
         }
-        maskLayer.add(pathAnimation, forKey: "animation")
+
+        cardMaskLayer.add(pathAnimation, forKey: "animation")
         CATransaction.commit()
+    }
+    
+    private lazy var smallCirclePath: CGPath = {
+        let center = CGPoint(x: 0, y: 0)
+        let radius: CGFloat = 1 // if its 0, the animation won't be nice.
+        return self.circle(with: center, and: radius).cgPath
+    }()
+    
+    private lazy var bigCirclePath: CGPath = {
+        let center = CGPoint(x: self.frontContainer.frame.width / 2,
+                             y: self.frontContainer.frame.height / 2)
+        return self.circle(with: center, and: self.bigCircleRadius).cgPath
+    }()
+    
+    private lazy var bigCircleRadius: CGFloat = {
+        let halfWidth = self.frontContainer.frame.width / 2
+        let halfHeight = self.frontContainer.frame.height / 2
+        
+        let center = CGPoint(x: halfWidth, y: halfHeight)
+        
+        return √(halfWidth.² + halfHeight.²)
+    }()
+    
+    private func circle(with center: CGPoint, and radius: CGFloat) -> UIBezierPath {
+        return UIBezierPath(arcCenter: center,
+                            radius: radius,
+                            startAngle: 0,
+                            endAngle: 2 * .pi,
+                            clockwise: true)
     }
     
     fileprivate func flip(using direction: UIViewAnimationOptions) {
@@ -181,3 +197,14 @@ extension ViewController : CreditCardFormDelegate {
     }
 }
 
+fileprivate extension CGFloat {
+    
+    var ²: CGFloat {
+        return self * self
+    }
+}
+
+prefix operator √
+fileprivate prefix func √(a: CGFloat) -> CGFloat {
+    return sqrt(a)
+}
