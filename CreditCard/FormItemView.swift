@@ -45,6 +45,7 @@ class FormItemView : UIControl {
     
     lazy var bottomLine: UIView = {
         let line = UIView()
+        line.backgroundColor = .lightGray
         return line
     }()
     
@@ -53,7 +54,6 @@ class FormItemView : UIControl {
             let colorForState: UIColor = isActive ? .darkGray : .lightGray
             button.setTitleColor(colorForState, for: .normal)
             textField.textColor = colorForState
-            bottomLine.backgroundColor = .lightGray
         }
     }
     
