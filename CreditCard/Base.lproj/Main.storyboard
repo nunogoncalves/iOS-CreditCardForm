@@ -77,7 +77,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="xxxx xxxx xxxx xxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="xxxx xxxx xxxx xxxx" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPH-Cq-cIp">
                                                         <rect key="frame" x="10" y="110" width="313" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="OeX-IL-aSC"/>
@@ -164,13 +164,23 @@
                                     <constraint firstAttribute="height" constant="60" id="Lw6-Kp-dcX"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRL-ku-rDJ" userLabel="Examples">
+                                <rect key="frame" x="10" y="350" width="355" height="38.5"/>
+                                <string key="text">visa - 4111111111111111, visaElectron - 4026 0000 0000 0002, mastercard - 5538 3838 8383 3838, maestro - 5018 0000 0009, americanExpress - 3470 0000 0000 000, dinnersClub - 3009 9999 9999 99, discovery - 6550 0000 0000 0000, jcb - 1800 0000 0000 000</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="0.81759375000000001" green="0.81759375000000001" blue="0.81759375000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8tE-IP-dv9" secondAttribute="trailing" id="2P2-JF-JD4"/>
                             <constraint firstItem="Hq0-Lm-8Wt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7R0-E3-9ZB"/>
+                            <constraint firstItem="aRL-ku-rDJ" firstAttribute="leading" secondItem="8tE-IP-dv9" secondAttribute="leading" constant="10" id="Dh2-9G-0bh"/>
                             <constraint firstItem="Hq0-Lm-8Wt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZBR-wr-eEe"/>
                             <constraint firstItem="8tE-IP-dv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aeL-Fa-ULU"/>
+                            <constraint firstItem="aRL-ku-rDJ" firstAttribute="trailing" secondItem="8tE-IP-dv9" secondAttribute="trailing" constant="-10" id="dBH-tj-Pet"/>
+                            <constraint firstItem="aRL-ku-rDJ" firstAttribute="top" secondItem="8tE-IP-dv9" secondAttribute="bottom" constant="10" id="oVi-E2-Ax0"/>
                             <constraint firstAttribute="trailing" secondItem="Hq0-Lm-8Wt" secondAttribute="trailing" id="vuU-0H-fSz"/>
                             <constraint firstItem="8tE-IP-dv9" firstAttribute="top" secondItem="Hq0-Lm-8Wt" secondAttribute="bottom" constant="10" id="yFH-2m-Cep"/>
                         </constraints>
