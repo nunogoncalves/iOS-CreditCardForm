@@ -243,7 +243,7 @@ class CreditCardForm : UIControl {
         centerContentIfPossible()
     }
     
-    @objc fileprivate func becameFirstResponder(sender: FormItemView) {
+    @objc fileprivate func becameFirstResponder(sender: InputView) {
         selectedIndex = formItems.index(of: sender) ?? 0
     }
     
