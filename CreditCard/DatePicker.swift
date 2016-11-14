@@ -1,5 +1,5 @@
 //
-//  CCDatePicker.swift
+//  DatePicker.swift
 //  CreditCard
 //
 //  Created by Nuno Gonçalves on 13/11/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CCDatePicker : UIControl { //UIPickerView {
+class DatePicker : UIControl { //UIPickerView {
     
-    fileprivate let earliestPresentedDate = Date(timeIntervalSince1970: -62167216995)
+    fileprivate let earliestPresentedDate = Date(timeIntervalSince1970: -62167216995)  //Jan 1, 1
     fileprivate lazy var earliestComponents: DateComponents = {
         return self.calendar.dateComponents([.year, .month], from: self.earliestPresentedDate)
     }()
@@ -90,7 +90,7 @@ class CCDatePicker : UIControl { //UIPickerView {
     }
 }
 
-extension CCDatePicker : UIPickerViewDataSource {
+extension DatePicker : UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -127,17 +127,9 @@ extension CCDatePicker : UIPickerViewDataSource {
     }
 }
 
-extension CCDatePicker : UIPickerViewDelegate {
+extension DatePicker : UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-//        let selectedDate: Date
-//        if component == yearComponent {
-//            selectedDate = yearMonthFormatter.date(from: "\(year(for: row).asStringPaddedWithZeros)-\(selectedMonth)")!
-//        } else {
-//            let selectedMonth = month(for: row)
-//            selectedDate = yearMonthFormatter.date(from: "\(selectedYear.asStringPaddedWithZeros)-\(selectedMonth)")!
-//        }
-
         let selectedDate = date(for: row, and: component)
         
         if !isInsideRange(selectedDate) {
@@ -147,7 +139,6 @@ extension CCDatePicker : UIPickerViewDelegate {
 
         date = selectedDate
         sendActions(for: UIControlEvents.valueChanged)
-        
     }
     
     func isBeforeMinimum(_ date: Date) -> Bool {

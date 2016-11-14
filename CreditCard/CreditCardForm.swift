@@ -121,20 +121,13 @@ class CreditCardForm : UIControl {
         scrollView.addSubview(numberItem)
         formItems.append(dateItem)
         
-//        let datePicker = UIDatePicker()
-//        datePicker.datePickerMode = .date
-//        datePicker.minimumDate = Date()
-//        datePicker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
-
-        let picker = CCDatePicker(frame: CGRect(x: 0, y: 0, width: frame.width, height: 200))
-        picker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
-        picker.minimumDate = Date()
-//        picker.set(Date(timeIntervalSince1970: 0), animated: true)
+        let datePicker = DatePicker(frame: CGRect(x: 0, y: 0, width: frame.width, height: 200))
+        datePicker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
+        datePicker.minimumDate = Date()
         
         dateItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
         dateItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-//        dateItem.textField.inputView = datePicker
-        dateItem.textField.inputView = picker
+        dateItem.textField.inputView = datePicker
         dateItem.textField.inputAccessoryView = keyboardToolbar
         
         scrollView.addSubview(dateItem)
