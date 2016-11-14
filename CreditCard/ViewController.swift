@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate weak var cardTypeLabel: UILabel!
     @IBOutlet fileprivate weak var cardTypeImageView: UIImageView!
     
-    @IBOutlet fileprivate weak var cardOverlayView: UIImageView!
+    @IBOutlet fileprivate weak var cardFrontOverlayView: UIImageView!
+    @IBOutlet fileprivate weak var cardBackOverlayView: UIImageView!
     @IBOutlet fileprivate weak var front: UIImageView!
     @IBOutlet fileprivate weak var back: UIImageView!
     
@@ -55,12 +56,13 @@ class ViewController: UIViewController {
     func animateCardChange(addingCard: Bool) {
         
         if addingCard {
-            cardOverlayView.isHidden = false
+            cardFrontOverlayView.isHidden = false
+            cardBackOverlayView.isHidden = true
         }
         
         cardMaskLayer.path = bigCirclePath
         cardMaskLayer.fillColor = UIColor.black.cgColor
-        cardOverlayView.layer.mask = cardMaskLayer
+        cardFrontOverlayView.layer.mask = cardMaskLayer
         
         CATransaction.begin()
         
@@ -77,9 +79,10 @@ class ViewController: UIViewController {
         
         CATransaction.setCompletionBlock {
             if !addingCard {
-                self.cardOverlayView.isHidden = true
+                self.cardFrontOverlayView.isHidden = true
+                self.cardBackOverlayView.isHidden = false
             }
-            self.cardOverlayView.layer.mask = nil
+            self.cardFrontOverlayView.layer.mask = nil
             self.cardMaskLayer.removeAllAnimations()
         }
 
@@ -160,7 +163,7 @@ extension ViewController : CreditCardFormDelegate {
         cardTypeLabel.text = type?.rawValue
         cardTypeImageView.image = type?.image
         if let backgroundImage = type?.backgroundImage {
-            cardOverlayView.image = backgroundImage
+            cardFrontOverlayView.image = backgroundImage
         }
         
         animateCardChange(addingCard: type != nil)

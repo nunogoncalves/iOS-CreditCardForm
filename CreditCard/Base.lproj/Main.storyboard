@@ -35,6 +35,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
                                                         <color key="tintColor" red="0.1843137255" green="0.7725490196" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditCardBackEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="b5T-Y9-Vje">
+                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="210"/>
+                                                        <color key="tintColor" red="0.1843137255" green="0.7725490196" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="azP-G1-J36">
                                                         <rect key="frame" x="248" y="75" width="75" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,8 +52,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="b5T-Y9-Vje" firstAttribute="top" secondItem="qQ8-aZ-Wp7" secondAttribute="top" id="CJz-ye-ZUd"/>
+                                                    <constraint firstItem="b5T-Y9-Vje" firstAttribute="trailing" secondItem="qQ8-aZ-Wp7" secondAttribute="trailing" id="FVT-ey-vCh"/>
                                                     <constraint firstItem="qQ8-aZ-Wp7" firstAttribute="top" secondItem="Opk-tt-jAh" secondAttribute="top" id="MDr-cg-k1g"/>
+                                                    <constraint firstItem="b5T-Y9-Vje" firstAttribute="bottom" secondItem="qQ8-aZ-Wp7" secondAttribute="bottom" id="P0M-sV-SXn"/>
                                                     <constraint firstAttribute="bottom" secondItem="azP-G1-J36" secondAttribute="bottom" constant="100" id="aJa-bF-rR6"/>
+                                                    <constraint firstItem="b5T-Y9-Vje" firstAttribute="leading" secondItem="qQ8-aZ-Wp7" secondAttribute="leading" id="gjj-qK-4o1"/>
                                                     <constraint firstAttribute="trailing" secondItem="azP-G1-J36" secondAttribute="trailing" constant="13" id="p44-69-cmf"/>
                                                     <constraint firstAttribute="trailing" secondItem="qQ8-aZ-Wp7" secondAttribute="trailing" id="s85-X6-ozp"/>
                                                     <constraint firstItem="qQ8-aZ-Wp7" firstAttribute="leading" secondItem="Opk-tt-jAh" secondAttribute="leading" id="tJn-pg-SE7"/>
@@ -188,11 +196,12 @@
                     <connections>
                         <outlet property="back" destination="qQ8-aZ-Wp7" id="Zyx-By-olu"/>
                         <outlet property="backContainer" destination="Opk-tt-jAh" id="QuP-jC-370"/>
+                        <outlet property="cardBackOverlayView" destination="b5T-Y9-Vje" id="SF7-1e-lDw"/>
                         <outlet property="cardContainer" destination="WXY-Vx-zgJ" id="EjL-W4-5Wr"/>
                         <outlet property="cardExpiryDateTextView" destination="Hem-10-R2b" id="Vz6-M4-1jg"/>
+                        <outlet property="cardFrontOverlayView" destination="n18-Jr-7TG" id="Uml-dS-Wql"/>
                         <outlet property="cardNameTextView" destination="KRz-8y-aJZ" id="aly-zT-SIc"/>
                         <outlet property="cardNumberTextView" destination="JPH-Cq-cIp" id="sCQ-v1-oaH"/>
-                        <outlet property="cardOverlayView" destination="n18-Jr-7TG" id="McN-9E-YG8"/>
                         <outlet property="cardTypeImageView" destination="kbf-qb-GEH" id="xTQ-qu-IgI"/>
                         <outlet property="cardTypeLabel" destination="puL-ae-KYu" id="V3h-hq-Hig"/>
                         <outlet property="creaditCardForm" destination="8tE-IP-dv9" id="BLg-5i-o4P"/>
@@ -207,6 +216,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="creditCardBackEmpty" width="250" height="160"/>
         <image name="creditcardBack" width="250" height="160"/>
         <image name="creditcardFront" width="250" height="156"/>
         <image name="emptyCard" width="250" height="156"/>
