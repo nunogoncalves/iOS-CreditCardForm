@@ -18,15 +18,15 @@ protocol CreditCardFormDelegate : class {
 
 class CreditCardForm : UIControl {
     
-    private let interButtonsSpacing: CGFloat = 10
-    private let scrollViewContentPadding: CGFloat = 10
+    fileprivate let interButtonsSpacing: CGFloat = 10
+    fileprivate let scrollViewContentPadding: CGFloat = 10
     
-    private let scrollView = UIScrollView()
+    fileprivate let scrollView = UIScrollView()
     
-    let numberItem = FormItemView(type: .number)
-    let dateItem = FormItemView(type: .expiryDate)
-    let cvvItem = FormItemView(type: .securityCode)
-    let nameItem = FormItemView(type: .name)
+    fileprivate let numberItem = FormItemView(type: .number)
+    fileprivate let dateItem = FormItemView(type: .expiryDate)
+    fileprivate let securityCodeItem = FormItemView(type: .securityCode)
+    fileprivate let nameItem = FormItemView(type: .name)
     
     override var backgroundColor: UIColor? {
         didSet {
@@ -34,8 +34,8 @@ class CreditCardForm : UIControl {
         }
     }
     
-    var formItems: [FormItemView] = []
-    var selectedItem: FormItemView?
+    fileprivate var formItems: [FormItemView] = []
+    fileprivate var selectedItem: FormItemView?
     
     var selectedIndex = -1 {
         didSet {
@@ -102,12 +102,12 @@ class CreditCardForm : UIControl {
         return stackView
     }()
     
-    @objc private func previousTapped() {
+    @objc fileprivate func previousTapped() {
         let index = formItems.index(of: selectedItem!) ?? -1
         selectItem(at: index - 1)
     }
     
-    @objc private func nextTapped() {
+    @objc fileprivate func nextTapped() {
         let index = formItems.index(of: selectedItem!) ?? -1
         selectItem(at: index + 1)
     }
@@ -117,37 +117,43 @@ class CreditCardForm : UIControl {
         numberItem.textField.inputAccessoryView = keyboardToolbar
         numberItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
         numberItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+
         scrollView.addSubview(numberItem)
-        
         formItems.append(dateItem)
         
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.minimumDate = Date()
-        datePicker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .date
+//        datePicker.minimumDate = Date()
+//        datePicker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
+
+        let picker = CCDatePicker(frame: CGRect(x: 0, y: 0, width: frame.width, height: 200))
+        picker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
+        picker.minimumDate = Date()
+//        picker.set(Date(timeIntervalSince1970: 0), animated: true)
+        
         dateItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
         dateItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-        dateItem.textField.inputView = datePicker
+//        dateItem.textField.inputView = datePicker
+        dateItem.textField.inputView = picker
         dateItem.textField.inputAccessoryView = keyboardToolbar
-
         
         scrollView.addSubview(dateItem)
-        
-        formItems.append(cvvItem)
-        cvvItem.textField.inputAccessoryView = keyboardToolbar
-        cvvItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-        cvvItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        formItems.append(securityCodeItem)
 
-        scrollView.addSubview(cvvItem)
+        securityCodeItem.textField.inputAccessoryView = keyboardToolbar
+        securityCodeItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
+        securityCodeItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        scrollView.addSubview(securityCodeItem)
         
-        formItems.append(nameItem)
         nameItem.textField.inputAccessoryView = keyboardToolbar
         nameItem.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
         nameItem.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        
         scrollView.addSubview(nameItem)
+        formItems.append(nameItem)
     }
     
-    let dateFormatter = DateFormatter(format: "MM/YY")
+    private let dateFormatter = DateFormatter(format: "MM/YY")
     @objc private func datePicked(sender: UIDatePicker) {
         let dateStr = dateFormatter.string(from: sender.date)
         dateItem.textField.text = dateStr
