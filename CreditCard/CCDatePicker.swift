@@ -10,7 +10,7 @@ import UIKit
 
 class CCDatePicker : UIControl { //UIPickerView {
     
-    fileprivate let earliestPresentedDate = Date(timeIntervalSince1970: 0)
+    fileprivate let earliestPresentedDate = Date(timeIntervalSince1970: -62167216995)
     fileprivate lazy var earliestComponents: DateComponents = {
         return self.calendar.dateComponents([.year, .month], from: self.earliestPresentedDate)
     }()
@@ -38,13 +38,21 @@ class CCDatePicker : UIControl { //UIPickerView {
     }()
 
     fileprivate lazy var totalMonths: Int = {
-        return self.totalYears * 12
+        return self.totalYears
     }()
     
     fileprivate (set) var date = Date()
     
-    var minimumDate: Date?
-    var maximumDate: Date?
+    var minimumDate: Date? {
+        didSet {
+            minimumDate = minimumDate?.beginningOfMonth()
+        }
+    }
+    var maximumDate: Date? {
+        didSet {
+            maximumDate = maximumDate?.endOfMonth()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +65,7 @@ class CCDatePicker : UIControl { //UIPickerView {
     }
  
     func configure() {
-        backgroundColor = .lightGray
+        backgroundColor = .veryLightGray
         calendar = Calendar(identifier: .gregorian)
         picker = UIPickerView()
         addSubview(picker)
@@ -78,7 +86,7 @@ class CCDatePicker : UIControl { //UIPickerView {
         let components: DateComponents = calendar.dateComponents([.year, .month], from: date)
        
         set(year: components.year!, animated: animated)
-        set(month: components.month!, with: components.year!, animated: animated)
+        set(month: components.month!, animated: animated)
     }
 }
 
@@ -100,23 +108,18 @@ extension CCDatePicker : UIPickerViewDataSource {
         let dateLabel = UILabel()
         dateLabel.font = UIFont.systemFont(ofSize: 22)
         dateLabel.textAlignment = .center
+        dateLabel.textColor = .black
         
         let dateForRow = date(for: row, and: component)
-        if component == monthComponent {
-            print("view: ", row, row % 12)
-            print(dateForRow)
-        }
-        dateLabel.textColor = UIColor.black
         
-//        if !isInsideRange(dateForRow) {
-//            dateLabel.textColor = UIColor.darkGray
-//        }
+        if !isInsideRange(dateForRow) {
+            dateLabel.textColor = UIColor.lightGray
+        }
         
         if component == yearComponent {
-            dateLabel.text = "\(earliestYear + row)"
+            dateLabel.text = "\(year(for: row))"
         } else {
-            let month = row % 12 + 1
-            let monthStr = longMonthFormatter.string(from: shortMonthformatter.date(from: "\(month)")!)
+            let monthStr = longMonthFormatter.string(from: shortMonthformatter.date(from: "\(month(for: row))")!)
             dateLabel.text = monthStr
         }
         
@@ -127,23 +130,19 @@ extension CCDatePicker : UIPickerViewDataSource {
 extension CCDatePicker : UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        let selectedDate: Date
-        if component == yearComponent {
-            let selectedMonth = month(for: pickerView.selectedRow(inComponent: monthComponent))
-            selectedDate = yearMonthFormatter.date(from: "\(year(for: row))-\(selectedMonth)")!
-        } else {
-            let selectedYear = year(for: pickerView.selectedRow(inComponent: yearComponent))
-            let selectedMonth = month(for: row)
-            selectedDate = yearMonthFormatter.date(from: "\(selectedYear)-\(selectedMonth)")!
-        }
+//        let selectedDate: Date
+//        if component == yearComponent {
+//            selectedDate = yearMonthFormatter.date(from: "\(year(for: row).asStringPaddedWithZeros)-\(selectedMonth)")!
+//        } else {
+//            let selectedMonth = month(for: row)
+//            selectedDate = yearMonthFormatter.date(from: "\(selectedYear.asStringPaddedWithZeros)-\(selectedMonth)")!
+//        }
+
+        let selectedDate = date(for: row, and: component)
         
-        if isBeforeMinimum(selectedDate) {
+        if !isInsideRange(selectedDate) {
             set(minimumDate!, animated: true)
             return
-        }
-        
-        if isAfterMaximum(selectedDate) {
-            set(maximumDate!, animated: true)
         }
 
         date = selectedDate
@@ -166,42 +165,40 @@ extension CCDatePicker : UIPickerViewDelegate {
     }
 
     func date(for row: Int, and component: Int) -> Date {
-        
-        let _year: Int
-        let _month: Int
-        
         if component == monthComponent {
-            _year = year(for: row / 12)
-            _month = month(for: row)
+            return yearMonthFormatter.date(from: "\(selectedYear.asStringPaddedWithZeros)-\(month(for: row))")!
         } else {
-            _year = year(for: row)
-            _month = (row % 12) + 1
+            return yearMonthFormatter.date(from: "\(year(for: row).asStringPaddedWithZeros)-\(selectedMonth)")!
         }
-        return yearMonthFormatter.date(from: "\(_year)-\(_month)")!
     }
     
-    func selectedYear() -> Int {
-        return year(for: picker.selectedRow(inComponent: yearComponent))
+    var selectedYear: Int {
+        return picker.selectedRow(inComponent: yearComponent) + 1
     }
     
-    func selectedMonth() -> Int {
+    var selectedMonth: Int {
         return month(for: picker.selectedRow(inComponent: monthComponent))
     }
     
     func set(year: Int, animated: Bool) {
-        let row = year - earliestYear
-        picker.selectRow(row, inComponent: yearComponent, animated: animated)
+        picker.selectRow(year - 1, inComponent: yearComponent, animated: animated)
     }
     
-    func set(month: Int, with year: Int, animated: Bool) {
-        picker.selectRow((((year - earliestYear) * 12) + month - 1), inComponent: monthComponent, animated: animated)
+    func set(month: Int, animated: Bool) {
+        picker.selectRow(selectedYear + month, inComponent: monthComponent, animated: animated)
     }
     
     func year(for row: Int) -> Int {
-        return earliestYear + row
+        return row + 1
     }
     
     func month(for row: Int) -> Int {
         return (row % 12) + 1
+    }
+}
+
+fileprivate extension Int {
+    var asStringPaddedWithZeros: String {
+        return String(format: "%04d", self)
     }
 }

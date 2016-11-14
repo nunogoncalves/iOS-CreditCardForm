@@ -21,6 +21,9 @@ extension UIColor {
         return UIColor(hex: 0x20C055)
     }
     
+    static var veryLightGray: UIColor {
+        return UIColor(hex: 0xEBEBF1)
+    }
 
     
 }
