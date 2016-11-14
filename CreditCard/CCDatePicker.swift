@@ -185,7 +185,7 @@ extension CCDatePicker : UIPickerViewDelegate {
     }
     
     func set(month: Int, animated: Bool) {
-        picker.selectRow(selectedYear + month, inComponent: monthComponent, animated: animated)
+        picker.selectRow(selectedYear + month - 1, inComponent: monthComponent, animated: animated)
     }
     
     func year(for row: Int) -> Int {
