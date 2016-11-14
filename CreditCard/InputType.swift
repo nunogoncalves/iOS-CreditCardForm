@@ -1,5 +1,5 @@
 //
-//  CreditCardFormType.swift
+//  InputType.swift
 //  CreditCard
 //
 //  Created by Nuno Gonçalves on 12/11/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum FormItemType: String {
+enum InputType: String {
     
     case name = "Card Name"
     case number = "Card Number"

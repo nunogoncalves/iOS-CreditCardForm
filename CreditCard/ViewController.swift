@@ -13,24 +13,20 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate weak var cardContainer: UIView!
     
     @IBOutlet fileprivate weak var frontContainer: UIView!
+    @IBOutlet fileprivate weak var cardTypeLabel: UILabel!
+    @IBOutlet fileprivate weak var cardTypeImageView: UIImageView!
     @IBOutlet fileprivate weak var cardNumberTextView: UITextView!
     @IBOutlet fileprivate weak var cardExpiryDateTextView: UITextView!
     @IBOutlet fileprivate weak var cardNameTextView: UITextView!
     @IBOutlet fileprivate weak var securityCodeTextView: UITextView!
+    @IBOutlet fileprivate weak var cardFrontOverlayView: UIImageView!
     
     @IBOutlet fileprivate weak var backContainer: UIView!
-    
-    @IBOutlet fileprivate weak var cardTypeLabel: UILabel!
-    @IBOutlet fileprivate weak var cardTypeImageView: UIImageView!
-    
-    @IBOutlet fileprivate weak var cardFrontOverlayView: UIImageView!
     @IBOutlet fileprivate weak var cardBackOverlayView: UIImageView!
-    @IBOutlet fileprivate weak var front: UIImageView!
-    @IBOutlet fileprivate weak var back: UIImageView!
     
     @IBOutlet fileprivate weak var creaditCardForm: CreditCardForm!
     
-    fileprivate var selectedFormItemType = FormItemType.number
+    fileprivate var selectedFormItemType = InputType.number
     fileprivate var selectedCardType: CreditCardType?
     
     fileprivate var isFrontVisible = true
@@ -50,19 +46,19 @@ class ViewController: UIViewController {
         securityCodeTextView.textContainerInset = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
     }
     
-    private let cardMaskLayer = CAShapeLayer()
+    private let cardAnimationMaskLayer = CAShapeLayer()
     private let cardTypeChangeAnimationDuration: TimeInterval = 0.2
     
-    func animateCardChange(addingCard: Bool) {
+    func animateCardTypeChange(addingCard: Bool) {
         
         if addingCard {
             cardFrontOverlayView.isHidden = false
             cardBackOverlayView.isHidden = true
         }
         
-        cardMaskLayer.path = bigCirclePath
-        cardMaskLayer.fillColor = UIColor.black.cgColor
-        cardFrontOverlayView.layer.mask = cardMaskLayer
+        cardAnimationMaskLayer.path = bigCirclePath
+        cardAnimationMaskLayer.fillColor = UIColor.black.cgColor
+        cardFrontOverlayView.layer.mask = cardAnimationMaskLayer
         
         CATransaction.begin()
         
@@ -83,10 +79,10 @@ class ViewController: UIViewController {
                 self.cardBackOverlayView.isHidden = false
             }
             self.cardFrontOverlayView.layer.mask = nil
-            self.cardMaskLayer.removeAllAnimations()
+            self.cardAnimationMaskLayer.removeAllAnimations()
         }
 
-        cardMaskLayer.add(pathAnimation, forKey: "animation")
+        cardAnimationMaskLayer.add(pathAnimation, forKey: "animation")
         CATransaction.commit()
     }
     
@@ -119,7 +115,7 @@ class ViewController: UIViewController {
                             clockwise: true)
     }
     
-    fileprivate func flip(using direction: UIViewAnimationOptions) {
+    fileprivate func flipCard(using direction: UIViewAnimationOptions) {
         UIView.transition(with: cardContainer,
                           duration: 0.4,
                           options: direction,
@@ -154,7 +150,7 @@ extension ViewController : CreditCardFormDelegate {
         
         cardNumberTextView.text = formattedNumber.isEmpty ? "XXXX XXXX XXXX XXXX" : formattedNumber
         
-        let type = CreditCardValidator.type(for: cardNumber)
+        let type = CreditCardTypeChecker.type(for: cardNumber)
         
         if type == selectedCardType {
             return
@@ -166,7 +162,7 @@ extension ViewController : CreditCardFormDelegate {
             cardFrontOverlayView.image = backgroundImage
         }
         
-        animateCardChange(addingCard: type != nil)
+        animateCardTypeChange(addingCard: type != nil)
        
         selectedCardType = type
     }
@@ -187,14 +183,14 @@ extension ViewController : CreditCardFormDelegate {
         securityCodeTextView.text = cardSecurityCode
     }
     
-    func selected(_ type: FormItemType) {
+    func selected(_ type: InputType) {
         guard selectedFormItemType != type else { return }
         
         if type == .securityCode {
-            flip(using: .transitionFlipFromRight)
+            flipCard(using: .transitionFlipFromRight)
         } else {
             if selectedFormItemType == .securityCode {
-                flip(using: .transitionFlipFromLeft)
+                flipCard(using: .transitionFlipFromLeft)
             }
         }
         selectedFormItemType = type

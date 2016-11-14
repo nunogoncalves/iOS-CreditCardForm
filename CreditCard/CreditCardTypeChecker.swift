@@ -1,5 +1,5 @@
 //
-//  CreditCardValidator.swift
+//  CreditCardTypeChecker.swift
 //  CreditCard
 //
 //  Created by Nuno Gonçalves on 12/11/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CreditCardValidator {
+struct CreditCardTypeChecker {
     
     static func type(for value: String) -> CreditCardType? {
         for creditCardType in CreditCardType.all {

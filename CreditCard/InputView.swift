@@ -1,5 +1,5 @@
 //
-//  CreditCardFormItemView.swift
+//  InputView.swift
 //  CreditCard
 //
 //  Created by Nuno Gonçalves on 12/11/16.
@@ -14,9 +14,9 @@ extension UIControlEvents {
     }
 }
 
-class FormItemView : UIControl {
+class InputView : UIControl {
     
-    let type: FormItemType
+    let type: InputType
     
     lazy var button: UIButton = {
         let button = UIButton()
@@ -57,13 +57,14 @@ class FormItemView : UIControl {
         }
     }
     
-    init(type: FormItemType) {
+    init(ofType type: InputType) {
         self.type = type
         super.init(frame: .zero)
         configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        //We could try and add availability on the Interface builder, but then we wold have to deal with optionals everywhere or inplicit unwrapped optionals... so let's avoid them if we can.
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -101,7 +102,7 @@ class FormItemView : UIControl {
     }
 }
 
-extension FormItemView : UITextFieldDelegate {
+extension InputView : UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         sendActions(for: .becameFirstResponder)
@@ -110,7 +111,7 @@ extension FormItemView : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentCount = textField.text?.characters.count ?? 0
         
-        guard let maxLenght = type.maxLength,
+        guard let maxLength = type.maxLength,
             currentCount != 0 else {
                 return true
         }
@@ -119,9 +120,7 @@ extension FormItemView : UITextFieldDelegate {
             return false
         }
         let newLength = currentCount + string.characters.count - range.length
-        return newLength <= maxLenght
+        return newLength <= maxLength
     }
-    
-    
     
 }

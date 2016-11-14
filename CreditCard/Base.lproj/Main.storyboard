@@ -194,7 +194,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="back" destination="qQ8-aZ-Wp7" id="Zyx-By-olu"/>
                         <outlet property="backContainer" destination="Opk-tt-jAh" id="QuP-jC-370"/>
                         <outlet property="cardBackOverlayView" destination="b5T-Y9-Vje" id="SF7-1e-lDw"/>
                         <outlet property="cardContainer" destination="WXY-Vx-zgJ" id="EjL-W4-5Wr"/>
@@ -205,7 +204,6 @@
                         <outlet property="cardTypeImageView" destination="kbf-qb-GEH" id="xTQ-qu-IgI"/>
                         <outlet property="cardTypeLabel" destination="puL-ae-KYu" id="V3h-hq-Hig"/>
                         <outlet property="creaditCardForm" destination="8tE-IP-dv9" id="BLg-5i-o4P"/>
-                        <outlet property="front" destination="YUv-U2-N3I" id="zzv-dg-2ZF"/>
                         <outlet property="frontContainer" destination="1CS-CQ-sUr" id="foM-sO-hsy"/>
                         <outlet property="securityCodeTextView" destination="azP-G1-J36" id="pfZ-zB-gTf"/>
                     </connections>

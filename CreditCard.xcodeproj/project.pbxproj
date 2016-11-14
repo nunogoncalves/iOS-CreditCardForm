@@ -11,13 +11,14 @@
 		854C193A1DD76F9E00F07CC8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19371DD76F9E00F07CC8 /* UIColor.swift */; };
 		854C193B1DD76F9E00F07CC8 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19381DD76F9E00F07CC8 /* UIStackView.swift */; };
 		854C193D1DD775BC00F07CC8 /* CreditCartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C193C1DD775BC00F07CC8 /* CreditCartType.swift */; };
-		854C193F1DD7807800F07CC8 /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C193E1DD7807800F07CC8 /* CreditCardValidator.swift */; };
+		854C193F1DD7807800F07CC8 /* CreditCardTypeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C193E1DD7807800F07CC8 /* CreditCardTypeChecker.swift */; };
 		854C19411DD791A600F07CC8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854C19401DD791A600F07CC8 /* UIView.swift */; };
 		8559B28C1DD8AE10005AD48F /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559B28B1DD8AE10005AD48F /* DatePicker.swift */; };
 		85E593CA1DDA5A5600F9C203 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E593C91DDA5A5600F9C203 /* Date.swift */; };
+		85E593CC1DDA7EC400F9C203 /* CreditCardFormDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E593CB1DDA7EC400F9C203 /* CreditCardFormDelegate.swift */; };
 		85F0C6431DD686AC00A52830 /* CreditCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6421DD686AC00A52830 /* CreditCardForm.swift */; };
-		85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6461DD696AE00A52830 /* FormItemView.swift */; };
-		85F0C6491DD696F100A52830 /* FormItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6481DD696F100A52830 /* FormItemType.swift */; };
+		85F0C6471DD696AE00A52830 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6461DD696AE00A52830 /* InputView.swift */; };
+		85F0C6491DD696F100A52830 /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0C6481DD696F100A52830 /* InputType.swift */; };
 		85F481081DD5337A00261C13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F481071DD5337A00261C13 /* AppDelegate.swift */; };
 		85F4810A1DD5337A00261C13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F481091DD5337A00261C13 /* ViewController.swift */; };
 		85F4810D1DD5337A00261C13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F4810B1DD5337A00261C13 /* Main.storyboard */; };
@@ -30,13 +31,14 @@
 		854C19371DD76F9E00F07CC8 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extensions/UIColor.swift; sourceTree = "<group>"; };
 		854C19381DD76F9E00F07CC8 /* UIStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = Extensions/UIStackView.swift; sourceTree = "<group>"; };
 		854C193C1DD775BC00F07CC8 /* CreditCartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCartType.swift; sourceTree = "<group>"; };
-		854C193E1DD7807800F07CC8 /* CreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
+		854C193E1DD7807800F07CC8 /* CreditCardTypeChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTypeChecker.swift; sourceTree = "<group>"; };
 		854C19401DD791A600F07CC8 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIView.swift; sourceTree = "<group>"; };
 		8559B28B1DD8AE10005AD48F /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		85E593C91DDA5A5600F9C203 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Extensions/Date.swift; sourceTree = "<group>"; };
+		85E593CB1DDA7EC400F9C203 /* CreditCardFormDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardFormDelegate.swift; sourceTree = "<group>"; };
 		85F0C6421DD686AC00A52830 /* CreditCardForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardForm.swift; sourceTree = "<group>"; };
-		85F0C6461DD696AE00A52830 /* FormItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemView.swift; sourceTree = "<group>"; };
-		85F0C6481DD696F100A52830 /* FormItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItemType.swift; sourceTree = "<group>"; };
+		85F0C6461DD696AE00A52830 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		85F0C6481DD696F100A52830 /* InputType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		85F481041DD5337A00261C13 /* CreditCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F481071DD5337A00261C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F481091DD5337A00261C13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,12 +105,13 @@
 				85F0C64D1DD724D000A52830 /* Other */,
 				85F0C6381DD6611500A52830 /* Extensions */,
 				85F481091DD5337A00261C13 /* ViewController.swift */,
-				85F0C6461DD696AE00A52830 /* FormItemView.swift */,
-				85F0C6481DD696F100A52830 /* FormItemType.swift */,
+				85F0C6461DD696AE00A52830 /* InputView.swift */,
+				85F0C6481DD696F100A52830 /* InputType.swift */,
 				85F0C6421DD686AC00A52830 /* CreditCardForm.swift */,
 				854C193C1DD775BC00F07CC8 /* CreditCartType.swift */,
-				854C193E1DD7807800F07CC8 /* CreditCardValidator.swift */,
+				854C193E1DD7807800F07CC8 /* CreditCardTypeChecker.swift */,
 				8559B28B1DD8AE10005AD48F /* DatePicker.swift */,
+				85E593CB1DDA7EC400F9C203 /* CreditCardFormDelegate.swift */,
 			);
 			path = CreditCard;
 			sourceTree = "<group>";
@@ -190,12 +193,13 @@
 				854C193A1DD76F9E00F07CC8 /* UIColor.swift in Sources */,
 				854C19411DD791A600F07CC8 /* UIView.swift in Sources */,
 				85F0C6431DD686AC00A52830 /* CreditCardForm.swift in Sources */,
-				854C193F1DD7807800F07CC8 /* CreditCardValidator.swift in Sources */,
+				854C193F1DD7807800F07CC8 /* CreditCardTypeChecker.swift in Sources */,
 				854C193B1DD76F9E00F07CC8 /* UIStackView.swift in Sources */,
-				85F0C6491DD696F100A52830 /* FormItemType.swift in Sources */,
+				85F0C6491DD696F100A52830 /* InputType.swift in Sources */,
 				8559B28C1DD8AE10005AD48F /* DatePicker.swift in Sources */,
 				85F4810A1DD5337A00261C13 /* ViewController.swift in Sources */,
-				85F0C6471DD696AE00A52830 /* FormItemView.swift in Sources */,
+				85E593CC1DDA7EC400F9C203 /* CreditCardFormDelegate.swift in Sources */,
+				85F0C6471DD696AE00A52830 /* InputView.swift in Sources */,
 				85F481081DD5337A00261C13 /* AppDelegate.swift in Sources */,
 				85E593CA1DDA5A5600F9C203 /* Date.swift in Sources */,
 				854C193D1DD775BC00F07CC8 /* CreditCartType.swift in Sources */,
