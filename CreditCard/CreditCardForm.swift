@@ -85,7 +85,7 @@ class CreditCardForm : UIControl {
     }()
     
     fileprivate lazy var keyboardToolbar: UIStackView = {
-        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        let stackView = UIStackView(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
         stackView.distribution = .fillEqually
         stackView.axis = .horizontal
         
@@ -108,16 +108,15 @@ class CreditCardForm : UIControl {
         formItems.append(numberInput)
         numberInput.textField.inputAccessoryView = keyboardToolbar
         numberInput.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-        numberInput.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        numberInput.addTarget(self, action: #selector(textChanged), for: .valueChanged)
 
         scrollView.addSubview(numberInput)
         formItems.append(dateInput)
         
-        let datePicker = DatePicker(frame: CGRect(x: 0, y: 0, width: frame.width, height: 200))
+        let datePicker = DatePicker(frame: CGRect(x: 0, y: 0, width: frame.width, height: 215))
         datePicker.addTarget(self, action: #selector(datePicked(sender:)), for: .valueChanged)
-        datePicker.minimumDate = Date()
         
-        dateInput.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        dateInput.addTarget(self, action: #selector(textChanged), for: .valueChanged)
         dateInput.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
         dateInput.textField.inputView = datePicker
         dateInput.textField.inputAccessoryView = keyboardToolbar
@@ -127,12 +126,12 @@ class CreditCardForm : UIControl {
 
         securityCodeInput.textField.inputAccessoryView = keyboardToolbar
         securityCodeInput.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-        securityCodeInput.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        securityCodeInput.addTarget(self, action: #selector(textChanged), for: .valueChanged)
         scrollView.addSubview(securityCodeInput)
         
         nameInput.textField.inputAccessoryView = keyboardToolbar
         nameInput.addTarget(self, action: #selector(becameFirstResponder(sender:)), for: .becameFirstResponder)
-        nameInput.addTarget(self, action: #selector(tellTheDelegateTextChanged), for: .valueChanged)
+        nameInput.addTarget(self, action: #selector(textChanged), for: .valueChanged)
         
         scrollView.addSubview(nameInput)
         formItems.append(nameInput)
@@ -239,7 +238,7 @@ class CreditCardForm : UIControl {
             self.nextButton.isHidden = index >= self.formItems.count - 1
             self.backButton.isHidden = index < 1
         }
-        tellTheDelegateTypeChanged()
+        typeChanged()
         centerContentIfPossible()
     }
     
@@ -260,12 +259,12 @@ class CreditCardForm : UIControl {
         scrollView.scrollRectToVisible(newFrame, animated: true)
     }
     
-    @objc fileprivate func tellTheDelegateTypeChanged() {
+    @objc fileprivate func typeChanged() {
         guard let type = selectedItem?.type else { return }
         delegate?.selected(type)
     }
     
-    @objc fileprivate func tellTheDelegateTextChanged() {
+    @objc fileprivate func textChanged() {
         guard let selectedItem = selectedItem else { return }
         let value = selectedItem.textField.text ?? ""
         switch selectedItem.type {

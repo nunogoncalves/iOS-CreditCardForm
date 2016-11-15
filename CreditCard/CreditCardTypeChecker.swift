@@ -22,7 +22,7 @@ struct CreditCardTypeChecker {
     private static func isValid(for cardType: CreditCardType, value: String) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: cardType.pattern,
-                            options: .caseInsensitive)
+                                                options: .caseInsensitive)
         
             return regex.matches(in: value,
                                  options: [],

@@ -188,10 +188,8 @@ extension ViewController : CreditCardFormDelegate {
         
         if type == .securityCode {
             flipCard(using: .transitionFlipFromRight)
-        } else {
-            if selectedFormItemType == .securityCode {
-                flipCard(using: .transitionFlipFromLeft)
-            }
+        } else if selectedFormItemType == .securityCode {
+            flipCard(using: .transitionFlipFromLeft)
         }
         selectedFormItemType = type
     }

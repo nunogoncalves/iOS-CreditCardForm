@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DatePicker : UIControl { //UIPickerView {
+class DatePicker : UIControl {
     
     fileprivate let earliestPresentedDate = Date(timeIntervalSince1970: -62167216995)  //Jan 1, 1
     fileprivate lazy var earliestComponents: DateComponents = {
@@ -69,6 +69,7 @@ class DatePicker : UIControl { //UIPickerView {
         calendar = Calendar(identifier: .gregorian)
         picker = UIPickerView()
         addSubview(picker)
+        
         picker.topAnchor.constraint(equalTo: topAnchor).isActive = true
         picker.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         picker.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

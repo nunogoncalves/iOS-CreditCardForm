@@ -69,7 +69,7 @@ enum CreditCardType : String {
     
     var exampleValue: String {
         switch self {
-        case .visa: return "4111111111111111"
+        case .visa: return "4111 1111 1111 1111"
         case .visaElectron: return "4026 0000 0000 0002"
         case .mastercard: return "5538 3838 8383 3838"
         case .maestro: return "5018 0000 0009"

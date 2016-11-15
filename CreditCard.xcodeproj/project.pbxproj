@@ -59,6 +59,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85CDBBD31DDBBD580085B16E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85F4810E1DD5337A00261C13 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		85CDBBD51DDBBFD00085B16E /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				85F0C6421DD686AC00A52830 /* CreditCardForm.swift */,
+				85E593CB1DDA7EC400F9C203 /* CreditCardFormDelegate.swift */,
+				85F0C6481DD696F100A52830 /* InputType.swift */,
+				85F0C6461DD696AE00A52830 /* InputView.swift */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		85CDBBD61DDBC1E50085B16E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				854C193E1DD7807800F07CC8 /* CreditCardTypeChecker.swift */,
+				854C193C1DD775BC00F07CC8 /* CreditCartType.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		85F0C6381DD6611500A52830 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,18 +97,6 @@
 				85E593C91DDA5A5600F9C203 /* Date.swift */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		85F0C64D1DD724D000A52830 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				85F4810B1DD5337A00261C13 /* Main.storyboard */,
-				85F481071DD5337A00261C13 /* AppDelegate.swift */,
-				85F481101DD5337A00261C13 /* LaunchScreen.storyboard */,
-				85F481131DD5337A00261C13 /* Info.plist */,
-				85F4810E1DD5337A00261C13 /* Assets.xcassets */,
-			);
-			name = Other;
 			sourceTree = "<group>";
 		};
 		85F480FB1DD5337900261C13 = {
@@ -102,16 +118,16 @@
 		85F481061DD5337A00261C13 /* CreditCard */ = {
 			isa = PBXGroup;
 			children = (
-				85F0C64D1DD724D000A52830 /* Other */,
+				85F481071DD5337A00261C13 /* AppDelegate.swift */,
 				85F0C6381DD6611500A52830 /* Extensions */,
+				85CDBBD51DDBBFD00085B16E /* Form */,
+				85CDBBD61DDBC1E50085B16E /* Models */,
+				85F481131DD5337A00261C13 /* Info.plist */,
+				85F481101DD5337A00261C13 /* LaunchScreen.storyboard */,
+				85F4810B1DD5337A00261C13 /* Main.storyboard */,
 				85F481091DD5337A00261C13 /* ViewController.swift */,
-				85F0C6461DD696AE00A52830 /* InputView.swift */,
-				85F0C6481DD696F100A52830 /* InputType.swift */,
-				85F0C6421DD686AC00A52830 /* CreditCardForm.swift */,
-				854C193C1DD775BC00F07CC8 /* CreditCartType.swift */,
-				854C193E1DD7807800F07CC8 /* CreditCardTypeChecker.swift */,
 				8559B28B1DD8AE10005AD48F /* DatePicker.swift */,
-				85E593CB1DDA7EC400F9C203 /* CreditCardFormDelegate.swift */,
+				85CDBBD31DDBBD580085B16E /* Resources */,
 			);
 			path = CreditCard;
 			sourceTree = "<group>";
